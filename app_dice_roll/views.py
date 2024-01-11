@@ -76,11 +76,13 @@ def result(request):
 
     if request.method == 'POST':
         option = request.POST.get('dice')
-        dice_type = "d0"
+        dice_type = "d-1"
+        dice_image = 'images/d-1_image.png'
         result = -1
 
         if option == 'd4':
            dice_type = "d4"
+           dice_image = 'images/d4_image.png'
            while True:
                 d4.roll()
                 result = d4.result
@@ -89,6 +91,7 @@ def result(request):
 
         elif option == 'd6':
            dice_type = "d6"
+           dice_image = 'images/d6_image.png'
            while True:
                 d6.roll()
                 result = d6.result
@@ -97,6 +100,7 @@ def result(request):
 
         elif option == 'd8':
            dice_type = "d8"
+           dice_image = 'images/d8_image.png'
            while True:
                 d8.roll()
                 result = d8.result
@@ -105,6 +109,7 @@ def result(request):
 
         elif option == 'd10':
            dice_type = "d10"
+           dice_image = 'images/d10_image.png'
            while True:
                 d10.roll()
                 result = d10.result
@@ -113,6 +118,7 @@ def result(request):
 
         elif option == 'd12':
            dice_type = "d12"
+           dice_image = 'images/d12_image.png'
            while True:
                 d12.roll()
                 result = d12.result
@@ -121,6 +127,7 @@ def result(request):
 
         elif option == 'd20':
            dice_type = "d20"
+           dice_image = 'images/d20_image.png'
            while True:
                 d20.roll()
                 result = d20.result
@@ -131,10 +138,11 @@ def result(request):
 
 
     
-
+   
     dices = {
             'result': result,
-            'dice_type': dice_type
+            'dice_type': dice_type,
+            'dice_image': dice_image
         }    
 
     return render(request, 'dices/dice_result.html', dices)    

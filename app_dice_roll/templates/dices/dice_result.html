@@ -1,11 +1,14 @@
 {% extends 'dices/base.html' %}
 {% block content %}
+{% load static %}
 
     <div class="container"  style="text-align: center;">
 
         <span style="font-size: 50px;"> dice result </span>  <br>
-        <span style="font-size: 50px;"> {{dice_type}} </span> 
-        <span style="font-size: 50px;"> {{result}} </span>
+        <img src="{% static dice_image %}" alt="dice_image"> <br>
+        <span style="font-size: 50px;"> {{dice_type}} </span>
+        <span style="font-size: 50px;"> {{result}} </span> <br>
+        
         
             
     </div>
