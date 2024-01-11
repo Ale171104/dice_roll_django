@@ -73,7 +73,7 @@ def home(request):
 
 
 def result(request):
-    
+
     if request.method == 'POST':
         option = request.POST.get('dice')
         dice_type = "d0"
